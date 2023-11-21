@@ -24,7 +24,12 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
+
         \App\Models\User::factory(10)->create();
+
+        // Clear the 'companies' table and seed 10 generic companies
+        \App\Models\Company::query()->delete();
+        \App\Models\Company::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

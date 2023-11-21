@@ -18,7 +18,9 @@ return new class extends Migration {
             $table->string('phone')->nullable();
 
             // Foreign key constraint with cascade on delete
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('company_id')
+                ->references('id')->on('companies')
+                ->onDelete('cascade');
         });
     }
 
