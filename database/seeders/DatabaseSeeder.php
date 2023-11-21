@@ -29,11 +29,12 @@ class DatabaseSeeder extends Seeder
         // Create more users if required..
         // User::factory(10)->create();
 
-        // Clear the 'companies' table and seed 10 generic companies
+        // Clear the 'companies' table and seed 30 generic companies
         // Because there is a foreign key constraint between the 'companies' and 'employees' tables,
         // with cascade on delete, the employee records will be deleted when the company is deleted
+        $numberOfCompanies = 30;
         Company::query()->delete();
-        Company::factory(10)->create();
+        Company::factory($numberOfCompanies)->create();
 
         // For each company, create 5 employees with a corporate email address
         $numberOfEmployees = 5;
