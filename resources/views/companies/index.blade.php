@@ -13,8 +13,10 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <ul>
                         @foreach ($companies as $company)
-                            <li>{{ $company->name }} - {{ $company->email }}</li>
-                            {{-- Add more company details here as needed --}}
+{{--                            <li>{{ $company->name }} - {{ $company->email }}</li>--}}
+{{--                            --}}{{-- Add more company details here as needed --}}
+                            <x-company-card :company="$company" />
+
                         @endforeach
                     </ul>
 
