@@ -23,10 +23,12 @@ Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('com
 Route::get('companies/{id}/delete', [CompanyController::class, 'delete'])->name('companies.delete');
 
 
+// Set up RESTful routes for employees
+Route::resource('employees', EmployeeController::class);
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

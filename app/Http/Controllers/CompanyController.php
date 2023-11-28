@@ -39,8 +39,10 @@ class CompanyController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $company = Company::with('employees')->findOrFail($id);
+        return view('companies.show', compact('company'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -19,18 +19,42 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            @if (isset($header))
+            @if (isset($heading))
                 <header class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                        <h1 class="font-semibold text-xl leading-tight text-gray-800 dark:text-white">
+                            {{ $heading }}
+                        </h1>
+
                     </div>
                 </header>
             @endif
 
+            @if (isset($secondaryNav))
+
+{{--                STATIC CONTENT FOR DEBUGGING--}}
+
+                <!-- Secondary Navigation -->
+
+{{--                <header class="bg-white dark:bg-gray-800 shadow">--}}
+{{--                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">--}}
+                    <div class="max-w-7xl mx-auto my-10 px-6  sm:px-6 lg:px-8 flex justify-between space-x-6  ">
+{{--                        <div class="flex "></div>--}}
+                        {{ $secondaryNav }}
+                    </div>
+{{--                </header>--}}
+            @endif
+
             <!-- Page Content -->
-            <main>
+            <main class="max-w-7xl mx-auto my-8 sm:px-6 lg:px-8 ">
+{{--                <div class="p-6 bg-gray-500 border-b border-gray-200 ">--}}
+                <div class=" bg-white  sm:rounded-lg pt-8">
+
                 {{ $slot }}
+{{--                </div>--}}
             </main>
+
+            <x-footer />
         </div>
     </body>
 </html>
