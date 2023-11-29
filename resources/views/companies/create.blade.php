@@ -73,42 +73,51 @@
     {{--        <x-crud-buttons.create text="Create New Company" href="{{ route('companies.create') }}" />--}}
     {{--    </form>--}}
 
-    <form action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data"
-          class="max-w-lg md:max-w-4xl mx-auto bg-white p-10">
-        @csrf
+    <x-companies.form operation="create" />
 
-        @if ($errors->any())
-            <div class="max-w-lg md:max-w-4xl mx-auto bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-10"
-                 role="alert">
-                <ul class="list-disc flex flex-col gap-2">
-                    @foreach ($errors->all() as $error)
-                        <li class="text-sm ml-2">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    {{--    </div>--}}
 
 
 
 
 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+{{--    <form action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data"--}}
+{{--          class="max-w-lg md:max-w-4xl mx-auto bg-white p-10">--}}
+{{--        @csrf--}}
 
-                <x-form.field label="Company Name" name="name" id="company-name" required/>
+{{--        @if ($errors->any())--}}
+{{--            <div class="max-w-lg md:max-w-4xl mx-auto bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-10"--}}
+{{--                 role="alert">--}}
+{{--                <ul class="list-disc flex flex-col gap-2">--}}
+{{--                    @foreach ($errors->all() as $error)--}}
+{{--                        <li class="text-sm ml-2">{{ $error }}</li>--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--        @endif--}}
 
-                <x-form.field type="email" label="Company Email" name="email" id="company-email"/>
 
-                <x-form.field type="file" label="Company Logo" name="logo" id="company-logo"/>
 
-                <x-form.field type="url" label="Company Website" name="website" id="company-website"/>
 
-        </div>
 
-        <div class="mt-10 flex justify-end">
-            <x-crud-buttons.create text="Add New Company" type="button"/>
-        </div>
-    </form>
+
+{{--        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">--}}
+
+{{--                <x-form.field label="Company Name" name="name" id="company-name" required/>--}}
+
+{{--                <x-form.field type="email" label="Company Email" name="email" id="company-email"/>--}}
+
+{{--                <x-form.field type="file" label="Company Logo" name="logo" id="company-logo"/>--}}
+
+{{--                <x-form.field type="url" label="Company Website" name="website" id="company-website"/>--}}
+
+{{--        </div>--}}
+
+{{--        <div class="mt-10 flex justify-end">--}}
+{{--            <x-crud-buttons.create text="Add New Company" type="button"/>--}}
+{{--        </div>--}}
+{{--    </form>--}}
 
 
 

@@ -21,7 +21,7 @@
 {{--                    View--}}
 {{--                </a>--}}
 
-                <x-crud-buttons.view :href="route('companies.show', $company->id)"/>
+                <x-crud-buttons.read :href="route('companies.show', $company->id)"/>
 
 
 {{--                <a href="/companies/{{ $company->id }}/edit"--}}
@@ -29,7 +29,7 @@
 {{--                    Edit--}}
 {{--                </a>--}}
 
-                <x-crud-buttons.edit :href="route('companies.edit', $company->id)"/>
+                <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>
 
                 <form action="/companies/{{ $company->id }}" method="POST">
                     @csrf

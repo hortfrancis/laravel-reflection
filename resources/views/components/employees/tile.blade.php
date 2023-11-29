@@ -7,7 +7,7 @@
 {{--           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">--}}
 {{--            Edit--}}
 {{--        </a>--}}
-        <x-crud-buttons.edit href="{{ route('employees.edit', $employee) }}" />
+        <x-crud-buttons.update href="{{ route('employees.edit', $employee) }}" />
 {{--        <x-crud-buttons.view href="{{ route('employees.show', $employee) }}" />--}}
         <form class="inline-block" action="{{ route('employees.destroy', $employee) }}" method="POST" onsubmit="return confirm('Are you sure?');">
             @csrf

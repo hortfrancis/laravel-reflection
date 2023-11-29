@@ -57,15 +57,22 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $company = Company::find($id);
+
+        return view('companies.edit', compact('company'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreCompanyRequest $request, string $id)
     {
-        //
+        // return 'in update method';
+
+        $company = Company::find($id);
+        $company->update($request->validated());
+
+        return redirect()->route('companies.index')->with('success', "Company updated successfully: " .  $company->name ?? '');
     }
 
     /**

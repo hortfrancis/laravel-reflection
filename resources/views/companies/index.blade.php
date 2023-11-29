@@ -30,6 +30,12 @@
     {{--        <div class=" mx-auto sm:px-6 lg:px-8">--}}
     {{--            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">--}}
     {{--                <div class="p-6 bg-white border-b border-gray-200 sm:rounded-lg">--}}
+
+    {{-- Pagination Links --}}
+    <div class="px-10 py-6">
+        {{ $companies->links() }}
+    </div>
+
     <ul>
         @foreach ($companies as $company)
             <li>

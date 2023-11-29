@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreCompanyRequest extends FormRequest
 {
@@ -24,9 +25,13 @@ class StoreCompanyRequest extends FormRequest
      */
     public function rules(): array
     {
+        $companyId = $this->route('id'); // Get the company ID from the route parameter
+
+        // dd($companyId);
+
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['nullable', 'email', 'max:255', 'unique:companies,email'],
+            'email' => ['nullable', 'email', 'max:255', Rule::unique('companies', 'email')->ignore($companyId)],
             'logo' => ['nullable', 'image', 'dimensions:min_width=100,min_height=100'],
             'website' => ['nullable', 'url'],
         ];

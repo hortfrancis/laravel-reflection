@@ -10,14 +10,16 @@
 
 
 @props([
-    'text' => 'Add', // Default to 'Add' if not provided
+    'text' => 'Edit', // Default to 'Edit' if not provided
     'href' => '#', // Default to '#' if not provided
     'type' => 'link', // Default to 'link' (`<a>`)
+    // 'buttonType' => 'button', // For button type, default to 'button'
+    // 'onClick' => '' // Optional onClick event for buttons
 ])
 
 @php
     // Set styles for buttons & links in one place
-    $styles = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
+    $styles = "bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded";
 @endphp
 
 {{--
@@ -33,3 +35,10 @@
         {{ $text }}
     </button>
 @endif
+
+
+
+{{--<a href="{{ $href }}"--}}
+{{--   class="inline-flex justify-center w-20 py-2 px-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold  rounded ">--}}
+{{--    Edit--}}
+{{--</a>--}}
