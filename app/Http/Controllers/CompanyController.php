@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCompanyRequest;
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Support\Facades\Log;
 
 class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         // Get 10 companies per page
         $companies = Company::paginate(10);
@@ -22,7 +23,7 @@ class CompanyController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('companies.create');
     }
@@ -30,7 +31,7 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCompanyRequest $request)
+    public function store(StoreCompanyRequest $request): \Illuminate\Http\RedirectResponse
     {
         // dd($request->all());
         // return 'in store method';
@@ -38,14 +39,14 @@ class CompanyController extends Controller
         $company = new Company($request->validated());
         $company->save();
 
-        return redirect()->route('companies.index')->with('success', "Company added successfully: " .  $company->name ?? '');
+        return redirect()->route('companies.index')->with('success', "Company added successfully: " . $company->name ?? '');
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         $company = Company::with('employees')->findOrFail($id);
         return view('companies.show', compact('company'));
@@ -55,7 +56,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         $company = Company::find($id);
 
@@ -65,21 +66,30 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreCompanyRequest $request, string $id)
+    public function update(StoreCompanyRequest $request, string $id): \Illuminate\Http\RedirectResponse
     {
-        // return 'in update method';
-
         $company = Company::find($id);
         $company->update($request->validated());
 
-        return redirect()->route('companies.index')->with('success', "Company updated successfully: " .  $company->name ?? '');
+        return redirect()->route('companies.index')->with('success', "Company updated successfully: " . $company->name ?? '');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): \Illuminate\Http\RedirectResponse
     {
-        //
+        try {
+            $company = Company::findOrFail($id);
+            $company->delete();
+
+            return redirect()->route('companies.index')->with('success', 'Company deleted successfully: ' . $company->name ?? '');
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            Log::error("Error deleting company: " . $e->getMessage());
+
+            // Redirect back with an error message
+            return back()->with('error', 'Error occurred while attempting to delete the company.');
+        }
     }
 }

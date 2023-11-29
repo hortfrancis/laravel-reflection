@@ -21,7 +21,7 @@ Route::post('companies', [CompanyController::class, 'store'])->name('companies.s
 Route::get('companies/{id}', [CompanyController::class, 'show'])->name('companies.show');
 Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
 Route::put('companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
-Route::get('companies/{id}/delete', [CompanyController::class, 'delete'])->name('companies.delete');
+Route::delete('companies/{id}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy');
 
 
 

@@ -31,15 +31,15 @@
 
                 <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>
 
-                <form action="/companies/{{ $company->id }}" method="POST">
-                    @csrf
-                    @method('DELETE')
+{{--                <form action="/companies/{{ $company->id }}" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
 {{--                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">--}}
 {{--                        Delete--}}
 {{--                    </button>--}}
 
-                    <x-crud-buttons.delete />
-                </form>
+                <x-crud-buttons.delete :companyId="$company->id" />
+{{--                </form>--}}
 {{--            </div>--}}
         </div>
     </div>
