@@ -9,17 +9,34 @@
 {{--</a>--}}
 
 
+{{--@props([--}}
+{{--    'text' => 'Edit', // Default to 'Edit' if not provided--}}
+{{--    'href' => '#', // Default to '#' if not provided--}}
+{{--    'type' => 'link', // Default to 'link' (`<a>`)--}}
+{{--    // 'buttonType' => 'button', // For button type, default to 'button'--}}
+{{--    // 'onClick' => '' // Optional onClick event for buttons--}}
+{{--])--}}
+
 @props([
+    'for', // Type of the item ('company' or 'employee')
+    'id', // ID of the company or employee
     'text' => 'Edit', // Default to 'Edit' if not provided
-    'href' => '#', // Default to '#' if not provided
     'type' => 'link', // Default to 'link' (`<a>`)
-    // 'buttonType' => 'button', // For button type, default to 'button'
-    // 'onClick' => '' // Optional onClick event for buttons
 ])
 
+
 @php
+
+    // dd($for);
+
     // Set styles for buttons & links in one place
     $styles = "bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded";
+
+    // Determine the route based on the type
+    $route = ($for === 'company') ? 'companies.edit' : 'employees.edit';
+
+    // Generate href if it's a link
+    // $href = ($type === 'link') ? route($route, $id) : '#';
 @endphp
 
 {{--
@@ -27,7 +44,7 @@
     either a button (`<button>`) or a link (`<a>`).
  --}}
 @if($type === 'link')
-    <a href="{{ $href }}" class="{{ $styles }}">
+    <a href="{{ route($route, $id) }}" class="{{ $styles }}">
         {{ $text }}
     </a>
 @else

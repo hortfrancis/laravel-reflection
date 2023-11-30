@@ -8,6 +8,6 @@
         <x-secondary-nav.back-button text="Back to Employees" href="{{route('employees.index')}}"/>
     </x-slot>
 
-    <x-employees.form operation="update" :company="$company" />
-
+    <x-employees.form operation="update" :employee="$employee" :allCompanies="$allCompanies"/>
+{{----}}
 </x-app-layout>

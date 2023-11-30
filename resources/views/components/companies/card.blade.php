@@ -18,7 +18,8 @@
             </p>
         </div>
         <div class="flex space-x-2">
-            <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>
+{{--            <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>--}}
+            <x-crud-buttons.update for="company" :id="$company->id" />
 
             @php
                 // dd($company->id);
@@ -26,7 +27,7 @@
 
 
 {{--            <x-crud-buttons.delete :companyId="$company->id"/>--}}
-            <x-crud-buttons.delete :companyId="$company->id" />
+            <x-crud-buttons.delete for="company" :id="$company->id" />
         </div>
     </div>
     <h3 class="text-lg leading-6 font-medium text-gray-900 mt-5">

@@ -62,9 +62,9 @@
         {{-- Submit button --}}
         <div class="mt-7 flex justify-end items-start ">
             @if ($operation === 'create')
-                <x-crud-buttons.create text="Create New Employee" type="button"/>
+                <x-crud-buttons.create for="employee" text="Create New Employee" type="button"/>
             @elseif ($operation === 'update')
-                <x-crud-buttons.update text="Save Changes" type="button"/>
+                <x-crud-buttons.update for="employee" text="Save Changes" type="button"/>
             @endif
         </div>
     </div>

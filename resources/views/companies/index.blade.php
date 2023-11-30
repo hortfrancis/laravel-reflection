@@ -5,7 +5,8 @@
 
     <x-slot name="secondaryNav">
         <x-secondary-nav.back-button text="Back to Home" href="{{route('home')}}"/>
-        <x-crud-buttons.create text="Add New Company" href="{{route('companies.create')}}"/>
+{{--        <x-crud-buttons.create text="Add New Company" href="{{route('companies.create')}}"/>--}}
+        <x-crud-buttons.create for="company" text="Add New Company" href="{{route('companies.create')}}"/>
     </x-slot>
 
     {{-- Pagination Links --}}

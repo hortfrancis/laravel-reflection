@@ -66,9 +66,18 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreEmployeeRequest $request, string $id)
     {
-        //
+        // dd($request->all());
+
+        $employee = Employee::find($id);
+        $employee->update($request->validated());
+
+        return redirect()->route('employees.index')->with('success',
+            "Employee updated successfully: "
+            . ($employee->first_name ?? '')
+            . ' '
+            . ($employee->last_name ?? ''));
     }
 
     /**
@@ -76,6 +85,6 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return 'in destroy method';
     }
 }
