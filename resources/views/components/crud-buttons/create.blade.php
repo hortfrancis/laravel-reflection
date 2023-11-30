@@ -18,7 +18,7 @@
 
 @php
     // Set styles for buttons & links in one place
-    $styles = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
+    $styles = "min-w-[8rch] bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
 
     // Determine the route based on the type
     $route = ($for === 'company') ? 'companies.create' : 'employees.create';

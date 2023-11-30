@@ -17,7 +17,7 @@
                 Website: <a href="{{ $company->website }}" class="text-blue-500">{{ $company->website }}</a>
             </p>
         </div>
-        <div class="flex space-x-2">
+        <div class="flex space-x-4">
 {{--            <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>--}}
             <x-crud-buttons.update for="company" :id="$company->id" />
 

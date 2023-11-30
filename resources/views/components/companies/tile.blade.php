@@ -14,7 +14,7 @@
 
         </div>
     </a>
-    <div class="flex space-x-6 px-6 py-4 ">
+    <div class="flex space-x-4 px-6 py-4 ">
 {{--        <x-crud-buttons.read :href="route('companies.show', $company->id)"/>--}}
         <x-crud-buttons.read for="company" :id="$company->id"/>
 {{--        <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>--}}

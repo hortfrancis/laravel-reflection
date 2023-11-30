@@ -2,7 +2,7 @@
     <strong>{{ $employee->first_name }} {{ $employee->last_name }}</strong><br>
     Email: {{ $employee->email }}<br>
     Phone: {{ $employee->phone }}
-    <div class="flex space-x-2">
+    <div class="flex space-x-4">
 
         {{-- Put CRUD buttons here --}}
 
