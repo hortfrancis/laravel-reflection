@@ -1,52 +1,50 @@
 <div class="bg-white p-10 rounded ">
-    <div class="flex flex-col md:flex-row gap-4 items-center md:justify-between overflow-hidden   ">
-        <div class="flex flex-col md:flex-row gap-4 items-center md:justify-between overflow-hidden sm:rounded-lg">
+    <div class="flex flex-col lg:flex-row gap-10 items-center lg:justify-between p-6   ">
+
+        <div class="flex flex-col md:flex-row gap-10 items-center md:justify-between">
+            {{-- Company logo --}}
             <img class="w-24"
                  {{--         src="{{ $company->logo ? $company->logo : asset('storage/company-logos/placeholder-company-logo.png') }}"--}}
                  src="{{asset('storage/company-logos/placeholders/logoipsum-327.svg')}}"
                  alt="Company Logo">
-            {{--    <div >--}}
+            {{-- Company name --}}
+            <h2 class="font-bold text-2xl">{{ $company->name }}</h2>
+        </div>
 
-            <h2 class="font-bold text-xl mb-2">{{ $company->name }}</h2>
+        <div class="flex flex-col">
+            <span class="text-gray-700 text-base mb-2">
+                {{-- Company email --}}
+                <span class="text-slate-500 mr-1">Email:</span> <strong>{{ $company->email }}</strong>
+            </span>
+            <span class="text-gray-700 text-base">
+                {{-- Company website --}}
+                <span class="text-slate-500 mr-1">Website:</span> <strong><a href="{{ $company->website }}"
+                                                                             target="_blank"
+                                                                             class="text-blue-500">{{ $company->website }}</a></strong>
+            </span>
         </div>
-        <div>
-            <p class="text-gray-700 text-base">
-                Email: {{ $company->email }}
-            </p>
-            <p class="text-gray-700 text-base">
-                Website: <a href="{{ $company->website }}" class="text-blue-500">{{ $company->website }}</a>
-            </p>
-        </div>
+
         <div class="flex space-x-4">
-{{--            <x-crud-buttons.update :href="route('companies.edit', $company->id)"/>--}}
-            <x-crud-buttons.update for="company" :id="$company->id" />
-
-            @php
-                // dd($company->id);
-            @endphp
-
-
-{{--            <x-crud-buttons.delete :companyId="$company->id"/>--}}
-            <x-crud-buttons.delete for="company" :id="$company->id" />
+            {{-- CRUD buttons for company --}}
+            <x-crud-buttons.update for="company" :id="$company->id"/>
+            <x-crud-buttons.delete for="company" :id="$company->id"/>
         </div>
     </div>
-    <h3 class="text-lg leading-6 font-medium text-gray-900 mt-5">
-        Employees
-    </h3>
-    <ul class="flex flex-col gap-4">
-        @forelse ($company->employees as $employee)
-            {{--                            <li class="mt-2">--}}
-            {{--                                <strong>{{ $employee->first_name }} {{ $employee->last_name }}</strong><br>--}}
-            {{--                                Email: {{ $employee->email }}<br>--}}
-            {{--                                Phone: {{ $employee->phone }}--}}
-            {{--                            </li>--}}
 
-            <x-employees.tile :employee="$employee"/>
-        @empty
-            <li>No employees found.</li>
-        @endforelse
-    </ul>
-</div>
+    <hr class="my-5">
 
+    <div class="pt-6 mx-auto flex flex-col mb-6">
+        <h3 class="text-xl text-center leading-6 font-bold text-gray-900 mb-8">
+            Employees
+        </h3>
+        {{-- List of all employees for this company --}}
+        <ul class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 min-[1180px]:grid-cols-3 gap-20 mx-auto">
+            @forelse ($company->employees as $employee)
+                <x-employees.tile :employee="$employee"/>
+            @empty
+                <p class="col-span-full">No employees found.</p>
+            @endforelse
+        </ul>
+    </div>
 
 </div>
