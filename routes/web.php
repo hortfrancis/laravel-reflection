@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,10 @@ Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('com
 Route::put('companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
 Route::delete('companies/{id}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy');
 
-
-
-
-
-
 // Set up RESTful routes for employees
 Route::resource('employees', EmployeeController::class);
+
+
 
 Route::get('/', function () {
     return view('welcome');

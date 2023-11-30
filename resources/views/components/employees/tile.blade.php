@@ -6,6 +6,10 @@
 
         {{-- Put CRUD buttons here --}}
 
+        <x-crud-buttons.read href="{{ route('employees.show', $employee) }}" />
+        <x-crud-buttons.update href="{{ route('employees.edit', $employee) }}" />
+{{--        <x-crud-buttons.delete href="{{ route('employees.destroy', $employee) }}" />--}}
+
 {{--        <a href="{{ route('employees.edit', $employee) }}"--}}
 {{--           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">--}}
 {{--            Edit--}}

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEmployeeRequest;
+use App\Models\Employee;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -11,7 +14,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employee::paginate(10);
+
+        return view('employees.index', compact('employees'));
     }
 
     /**
@@ -19,15 +24,24 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        $allCompanies = Company::pluck('name', 'id');
+
+        return view('employees.create', compact('allCompanies'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreEmployeeRequest $request)
     {
-        //
+        $employee = new Employee($request->validated());
+        $employee->save();
+
+        return redirect()->route('employees.index')->with('success',
+            "Employee added successfully: "
+            . ($employee->first_name ?? '')
+            . ' '
+            . ($employee->last_name ?? ''));
     }
 
     /**
@@ -43,7 +57,10 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $employee = Employee::find($id);
+        $allCompanies = Company::pluck('name', 'id');
+
+        return view('employees.edit', compact('employee', 'allCompanies'));
     }
 
     /**

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCompanyRequest;
-use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Http\Requests\StoreCompanyRequest;
 use Illuminate\Support\Facades\Log;
 
 class CompanyController extends Controller
