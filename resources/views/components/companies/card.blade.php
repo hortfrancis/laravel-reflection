@@ -40,7 +40,9 @@
         {{-- List of all employees for this company --}}
         <ul class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 min-[1180px]:grid-cols-3 gap-20 mx-auto">
             @forelse ($company->employees as $employee)
-                <x-employees.tile :employee="$employee"/>
+                <li>
+                    <x-employees.tile :employee="$employee"/>
+                </li>
             @empty
                 <p class="col-span-full">No employees found.</p>
             @endforelse

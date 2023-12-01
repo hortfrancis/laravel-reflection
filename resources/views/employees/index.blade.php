@@ -13,20 +13,20 @@
         {{ $employees->links() }}
     </div>
 
-    {{-- Show a message if there are no employees --}}
-    @if ($employees->isEmpty())
-        <li class="px-10 py-6">
+    <div class="p-10 mx-auto flex flex-col mb-6">
+        @if ($employees->isEmpty())
+            {{-- Show a message if there are no employees --}}
             <p class="text-center">No employees found.</p>
-        </li>
-    @else
-        <ul>
-            @foreach ($employees as $employee)
-                <li>
-                    <x-employees.tile :employee="$employee"/>
-                </li>
-            @endforeach
-        </ul>
-    @endif
+        @else
+            <ul class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 min-[1180px]:grid-cols-3 gap-20 mx-auto">
+                @foreach ($employees as $employee)
+                    <li>
+                        <x-employees.tile :employee="$employee"/>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
 
     {{-- Pagination Links --}}
     <div class="px-10 py-6">
