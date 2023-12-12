@@ -18,6 +18,9 @@ export default {
                 'height': 'height',
                 'opacity': 'opacity'
             },
+            screens: {
+                'xs': '400px'
+            }
         },
     },
 
