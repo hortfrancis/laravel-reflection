@@ -1,9 +1,11 @@
-<div class=" align-center items-center  h-16  lg:px-8 ">
+{{-- <div > --}}
 
 
-    <div class="max-w-7xl  py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    {{-- <div class="max-w-7xl  py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center"> --}}
+        <div class=" flex justify-between items-center">
 
-        <a href="/" class="px-2 font-medium text-white-500 dark:text-gray-300">Company Management App</a>
+
+        <a href="/" class=" font-medium text-white-500 dark:text-gray-300">Company Management App</a>
 
 
 
@@ -94,4 +96,4 @@
     </div> --}}
 
     {{-- </div> --}}
-</div>
+{{-- </div> --}}
