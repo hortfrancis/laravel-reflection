@@ -9,7 +9,7 @@
     </x-slot>
 
     {{-- Pagination Links --}}
-    <div class="px-10 py-6">
+    <div class="px-6 sm:px-12 py-12">
         {{ $employees->links() }}
     </div>
 
@@ -29,7 +29,7 @@
     </div>
 
     {{-- Pagination Links --}}
-    <div class="px-10 py-6">
+    <div class="px-6 sm:px-12 py-12">
         {{ $employees->links() }}
     </div>
 
