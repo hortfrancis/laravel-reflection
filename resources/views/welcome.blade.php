@@ -799,12 +799,14 @@
 {{-- </head> --}}
 
 @php
-$viewButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded';
-$logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded';
+    $logInButtonStyles = $viewButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded';
+
+    $logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded';
 @endphp
 
 
-<body class="antialiased flex flex-col h-[100vh] gap-10 justify-center items-center  dark:bg-gray-800   bg-gradient-to-b from-slate-100 to-stone-100 dark:from-slate-800	dark:to-stone-800">
+<body
+    class="antialiased flex flex-col min-h-[100vh]  gap-10 justify-center items-center  dark:bg-gray-800   bg-gradient-to-b from-slate-100 to-stone-100 dark:from-slate-800	dark:to-stone-800">
 
 
 
@@ -817,6 +819,12 @@ $logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-ce
 </hgroup> --}}
 
     <x-site-title-banner />
+
+    <p class="text-center text-lg leading-8 flex flex-col dark:text-white">
+        <span >A <a href="https://laravel.com/" target="_blank" class="font-bold text-red-600 hover:text-red-400 dark:text-red-400 dark:hover:text-red-600">Laravel</a> Project, </span>
+        <span>with <a href="https://laravel.com/" target="_blank" class="font-bold text-sky-600 hover:text-sky-400 dark:text-sky-400 dark:hover:text-sky-600">Tailwind CSS</a></span>
+        <span>by <a href="https://github.com/hortfrancis" target="_blank" class="font-bold hover:text-gray-500 dark:hover:text-gray-400">Alex Hort-Francis</a></span>
+    </p>
 
 
     {{-- If the user is logged in, show the links to companies and employees --}}
@@ -834,7 +842,28 @@ $logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-ce
     @else
         {{-- If the user is not logged in --}}
         {{-- Show the login form --}}
-        <x-login-form />
+
+        {{-- <div class="w-full sm:max-w-md my-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg"> --}}
+
+            {{-- <div class="flex flex-col gap-2 text-center  dark:text-gray-200 mb-6">
+                <span class="font-bold text-lg">
+                    Demo credentials:
+                </span>
+
+                <div class="flex flex-col gap-2">
+                    <span>Username: <br><span class="font-semibold font-mono">admin@admin.com</span></span>
+                    <span>Password: <br><span class="font-semibold font-mono">password</span></span>
+                </div>
+            </div> --}}
+
+            <x-nice-hr />
+
+            <a href="/login" class="{{ $logInButtonStyles }}">Log In</a>
+
+
+            {{-- <x-login-form /> --}}
+        {{-- </div> --}}
+
     @endauth
 
     @auth
@@ -847,7 +876,7 @@ $logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-ce
 
         <form action="{{ route('logout') }}" method="POST" class="flex flex-col gap-6">
             @csrf
-            <button type="submit" class="{{ $logoutButtonStyles }}">Logout</button>
+            <button type="submit" class="{{ $logoutButtonStyles }}">Log Out</button>
         </form>
     @endauth
 

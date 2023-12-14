@@ -1,6 +1,17 @@
 <form method="POST" action="{{ route('login') }}">
     @csrf
-    {{ 'wobbly blob' }}
+
+    <!-- Demo credentials -->
+    <div class="flex flex-col gap-3 text-center  dark:text-gray-200 mb-6">
+        <span class="font-bold text-lg">
+            Demo credentials:
+        </span>
+
+        <div class="flex flex-col gap-2">
+            <span><i>Username: </i><br><span class="font-semibold font-mono">admin@admin.com</span></span>
+            <span><i>Password: </i><br><span class="font-semibold font-mono">password</span></span>
+        </div>
+    </div>
 
     <!-- Email Address -->
     <div>

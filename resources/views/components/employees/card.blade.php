@@ -8,6 +8,7 @@
         </div>
 
         <div class="flex flex-col">
+            <span class="text-gray-700 text-base mb-2">
                 {{-- Employee email --}}
                 <span class="text-slate-500 mr-1">Email:</span> <strong> <a
                         href="mailto:{{ $employee->email }}">{{ $employee->email }}</a></strong>

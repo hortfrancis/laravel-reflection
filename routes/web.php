@@ -16,12 +16,16 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
 Route::middleware('auth')->group(function () {
     // All your routes will go here
 
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('home');
+    // Route::get('/', function () {
+    //     return view('welcome');
+    // })->name('home');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
