@@ -7,10 +7,6 @@
         <x-secondary-nav.back-button text="Back to Employees" href="{{route('employees.index')}}" />
     </x-slot>
 
-{{--    @php--}}
-{{--    dd($employee);--}}
-{{--    @endphp--}}
-
     <x-employees.card :employee="$employee" />
 
 </x-app-layout>

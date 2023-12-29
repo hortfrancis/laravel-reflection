@@ -5,7 +5,6 @@
 
     <x-slot name="secondaryNav">
         <x-secondary-nav.back-button text="Back to Home" href="{{ route('home') }}" />
-        {{--        <x-crud-buttons.create text="Add New Company" href="{{route('companies.create')}}"/> --}}
         <x-crud-buttons.create for="company" text="Add New Company" href="{{ route('companies.create') }}" />
     </x-slot>
 
@@ -25,9 +24,7 @@
                 <li>
                     <x-companies.tile :company="$company" />
                     @if (!$loop->last)
-                        {{-- <x-nice-hr /> --}}
                         <hr class="mx-auto w-[20rch] h-1 my-4 bg-gray-200 border-0 dark:bg-gray-400">
-
                     @endif
                 </li>
             @endforeach

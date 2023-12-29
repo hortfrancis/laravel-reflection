@@ -18,7 +18,7 @@
             {{-- Show a message if there are no employees --}}
             <p class="text-center">No employees found.</p>
         @else
-            <ul class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 min-[1180px]:grid-cols-3 gap-20 mx-auto">
+            <ul class="grid grid-cols-1 md:grid-cols-2 min-[1180px]:grid-cols-3 gap-20 mx-auto">
                 @foreach ($employees as $employee)
                     <li>
                         <x-employees.tile :employee="$employee"/>

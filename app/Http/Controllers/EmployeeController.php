@@ -69,8 +69,6 @@ class EmployeeController extends Controller
      */
     public function update(StoreEmployeeRequest $request, string $id)
     {
-        // dd($request->all());
-
         $employee = Employee::find($id);
         $employee->update($request->validated());
 

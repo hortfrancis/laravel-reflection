@@ -9,5 +9,5 @@
     </x-slot>
 
     <x-employees.form operation="update" :employee="$employee" :allCompanies="$allCompanies"/>
-{{----}}
+
 </x-app-layout>

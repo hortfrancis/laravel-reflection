@@ -28,8 +28,6 @@
         </div>
     </div>
 
-    {{-- <hr class="my-5"> --}}
-
     <x-nice-hr />
 
     {{-- Company address --}}

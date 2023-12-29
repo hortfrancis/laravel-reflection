@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="heading">
-{{--        {{ $company->name }}--}}
         Company Details
     </x-slot>
 

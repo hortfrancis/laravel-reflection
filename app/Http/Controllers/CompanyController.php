@@ -33,9 +33,6 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request): \Illuminate\Http\RedirectResponse
     {
-        // dd($request->all());
-        // return 'in store method';
-
         $company = new Company($request->validated());
         $company->save();
 
