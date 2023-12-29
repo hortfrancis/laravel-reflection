@@ -16,7 +16,7 @@
 @endphp
 
 <form action="{{ $action }}" method="POST"
-      class="max-w-lg md:max-w-4xl mx-auto bg-white p-10">
+      class="max-w-lg md:max-w-4xl mx-auto p-10">
     @csrf
 
     @if ($operation === 'update')
