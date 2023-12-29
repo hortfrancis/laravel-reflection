@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-white mt-8">
+<footer class="bg-slate-800 text-white mt-8 border-t border-gray-100 dark:border-gray-700">
     <div class="max-w-7xl mx-auto py-10 px-6 lg:px-8 flex flex-col gap-6 md:flex-row  items-center justify-between text-center">
 {{--        <p>Admin Panel Project</p>--}}
 {{--        <nav class="flex flex-wrap items-center mt-3 text-sm md:mt-0">--}}

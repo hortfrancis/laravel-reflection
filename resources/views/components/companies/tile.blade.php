@@ -1,7 +1,15 @@
 @props(['company'])
 
 <div
-    class="flex flex-col md:flex-row gap-4 items-center md:justify-between overflow-hidden border-gray-20 border-b-8 bg-white p-6 pb-10 mb-10 sm:rounded-lg">
+    class="flex flex-col md:flex-row gap-4 items-center md:justify-between overflow-hidden
+     {{-- border-gray-20 border-b-8 --}}
+      {{-- bg-white --}}
+      {{-- dark:bg-slate-900 --}}
+      p-6 mb-16
+      {{-- sm:rounded-lg --}}
+      {{-- dark:text-white --}}
+      {{-- dark: --}}
+      ">
     <a href="/companies/{{ $company->id }}" class="hover:text-gray-500">
         <div class="flex items-center gap-6 px-6">
 

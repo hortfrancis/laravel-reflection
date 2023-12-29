@@ -4,9 +4,9 @@
     </x-slot>
 
     <x-slot name="secondaryNav">
-        <x-secondary-nav.back-button text="Back to Home" href="{{route('home')}}"/>
-{{--        <x-crud-buttons.create text="Add New Company" href="{{route('companies.create')}}"/>--}}
-        <x-crud-buttons.create for="company" text="Add New Company" href="{{route('companies.create')}}"/>
+        <x-secondary-nav.back-button text="Back to Home" href="{{ route('home') }}" />
+        {{--        <x-crud-buttons.create text="Add New Company" href="{{route('companies.create')}}"/> --}}
+        <x-crud-buttons.create for="company" text="Add New Company" href="{{ route('companies.create') }}" />
     </x-slot>
 
     {{-- Pagination Links --}}
@@ -20,10 +20,15 @@
             <p class="text-center">No companies found.</p>
         </li>
     @else
-        <ul>
+        <ul class="flex flex-col gap-10">
             @foreach ($companies as $company)
                 <li>
-                    <x-companies.tile :company="$company"/>
+                    <x-companies.tile :company="$company" />
+                    @if (!$loop->last)
+                        {{-- <x-nice-hr /> --}}
+                        <hr class="mx-auto w-[20rch] h-1 my-4 bg-gray-200 border-0 dark:bg-gray-400">
+
+                    @endif
                 </li>
             @endforeach
         </ul>
@@ -36,10 +41,10 @@
 
     @if (session('success'))
         {{-- Display a temporary success message if redirected from a successful Create, Edit, or Delete action --}}
-        <x-alert-message type="success" :message="session('success')"/>
+        <x-alert-message type="success" :message="session('success')" />
     @elseif(session('error'))
         {{-- Display a temporary error message if redirected from a failed Create, Edit, or Delete action --}}
-        <x-alert-message type="error" :message="session('error')"/>
+        <x-alert-message type="error" :message="session('error')" />
     @endif
 
 </x-app-layout>
