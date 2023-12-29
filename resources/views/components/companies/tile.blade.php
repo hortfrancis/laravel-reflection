@@ -1,7 +1,7 @@
 @props(['company'])
 
 <div
-    class="flex flex-col md:flex-row gap-4 items-center md:justify-between overflow-hidden
+    class="flex flex-col md:flex-row gap-8 items-center md:justify-between overflow-hidden
      {{-- border-gray-20 border-b-8 --}}
       {{-- bg-white --}}
       {{-- dark:bg-slate-900 --}}

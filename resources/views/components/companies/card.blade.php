@@ -1,4 +1,4 @@
-<div class="bg-white p-10 rounded ">
+<div class="bg-white dark:bg-gray-300 p-10 rounded ">
     <div class="flex flex-col lg:flex-row gap-10 items-center lg:justify-between p-6   ">
 
         <div class="flex flex-col md:flex-row gap-10 items-center md:justify-between">
@@ -12,11 +12,11 @@
         <div class="flex flex-col">
             <span class="text-gray-700 text-base mb-2">
                 {{-- Company email --}}
-                <span class="text-slate-500 mr-1">Email:</span> <strong>{{ $company->email }}</strong>
+                <span class="text-slate-500 dark:text-slate-700 mr-1">Email:</span> <strong>{{ $company->email }}</strong>
             </span>
             <span class="text-gray-700 text-base">
                 {{-- Company website --}}
-                <span class="text-slate-500 mr-1">Website:</span> <strong><a href="{{ $company->website }}"
+                <span class="text-slate-500 dark:text-slate-700 mr-1">Website:</span> <strong><a href="{{ $company->website }}"
                         target="_blank" class="text-blue-500">{{ $company->website }}</a></strong>
             </span>
         </div>

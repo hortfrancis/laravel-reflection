@@ -5,10 +5,10 @@
         </span>
 
     <span>
-            <span class="text-slate-500 mr-1">Email:</span> {{ $employee->email }}
+            <span class="text-slate-500 dark:text-slate-700 mr-1">Email:</span> {{ $employee->email }}
         </span>
     <span>
-            <span class="text-slate-500 mr-1">Phone:</span> {{ $employee->phone }}
+            <span class="text-slate-500 dark:text-slate-700 mr-1">Phone:</span> {{ $employee->phone }}
         </span>
 </div>
 
