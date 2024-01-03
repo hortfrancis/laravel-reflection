@@ -1,7 +1,7 @@
 @props(['company'])
 
 <div class="flex flex-col md:flex-row gap-8 items-center md:justify-between overflow-hidden p-6 mb-16">
-    <a href="/companies/{{ $company->id }}" class="hover:text-gray-500">
+    <a href="{{ route('companies.index') . '/' . $company->id }}" class="hover:text-gray-500">
         <div class="flex items-center gap-6 px-6">
 
             <img class="w-16 rounded-lg object-cover" {{--                 src="{{ Storage::url($company->logo) }}" --}}

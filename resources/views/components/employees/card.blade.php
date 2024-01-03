@@ -20,7 +20,7 @@
             <span class="text-gray-700 text-base mb-2">
                 {{-- Employee company --}}
                 <span class="text-slate-500 dark:text-slate-700 mr-1">Company:</span> <strong> <a
-                        href="/companies/{{ $employee->company->id }}">{{ $employee->company->name }}</a></strong>
+                        href="{{ route('companies.index') . '/' . $employee->company->id }}">{{ $employee->company->name }}</a></strong>
             </span>
         </div>
 
