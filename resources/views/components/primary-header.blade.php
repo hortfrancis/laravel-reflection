@@ -1,6 +1,6 @@
 <div class=" flex justify-between items-center">
 
-    <a href="/" class="font-medium text-gray-300 hover:text-gray-100">Company Management App</a>
+    <a href="{{ route('home') }}" class="font-medium text-gray-300 hover:text-gray-100">Company Management App</a>
 
     <div class="flex sm:items-center sm:ms-6">
         <x-dropdown align="right" width="48">
