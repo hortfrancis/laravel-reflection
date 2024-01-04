@@ -7,7 +7,7 @@
 
 @php
     // Set styles for buttons & links in one place
-    $styles = "inline-flex justify-center min-w-[8rch] text-center bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded";
+    $styles = "inline-flex justify-center min-w-[8ch] text-center bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded";
 
     // Determine the route based on the type
     $route = ($for === 'company') ? 'companies.edit' : 'employees.edit';

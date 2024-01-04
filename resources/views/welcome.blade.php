@@ -17,9 +17,9 @@
 </head>
 
 @php
-    $logInButtonStyles = $viewButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded';
+    $logInButtonStyles = $viewButtonStyles = 'tracking-wide min-w-[20ch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded';
 
-    $logoutButtonStyles = 'tracking-wide min-w-[20rch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded';
+    $logoutButtonStyles = 'tracking-wide min-w-[20ch] inline-flex  gap-1 justify-center w-20 py-2 px-4 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded';
 @endphp
 
 

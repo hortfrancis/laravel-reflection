@@ -24,7 +24,7 @@
                 <li>
                     <x-companies.tile :company="$company" />
                     @if (!$loop->last)
-                        <hr class="mx-auto w-[20rch] h-1 my-4 bg-gray-200 border-0 dark:bg-gray-400">
+                        <hr class="mx-auto w-[20ch] h-1 my-4 bg-gray-200 border-0 dark:bg-gray-400">
                     @endif
                 </li>
             @endforeach

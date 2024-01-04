@@ -17,7 +17,7 @@ return confirm('Are you sure you want to delete this {{ $for === 'company' ? 'co
     @csrf
     @method('DELETE')
     <button type="submit"
-            class="min-w-[8rch] py-2 px-4 bg-red-500 hover:bg-red-700 text-white font-bold rounded">
+            class="min-w-[8ch] py-2 px-4 bg-red-500 hover:bg-red-700 text-white font-bold rounded">
         Delete
     </button>
 </form>
